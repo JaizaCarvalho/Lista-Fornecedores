@@ -1,0 +1,344 @@
+body {
+    margin: 0;
+    margin-top: 40px;
+
+    font-family: 'Poppins', sans-serif;
+    color: white;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url("imagemfundo.png");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* TOPO */
+.topo {
+    padding-top: 140px !important;
+    text-align: center;
+    padding: 80px 20px;
+    line-height: 1; 
+
+}
+
+/* TEXTO PEQUENO */
+.topo h1 {
+    margin: 0;
+    margin-bottom: 6px; /* ajuste fino aqui */
+    font-size: 36px;
+    line-height: 1; 
+    letter-spacing:10px;
+    color: white;
+}
+
+/* TÍTULO PRINCIPAL */
+.titulo{
+    font-size: clamp(40px, 8vw, 80px);
+
+    font-family: 'Bebas Neue', sans-serif;
+   /* font-size: 150px;*/
+
+    letter-spacing: 3px; /* MELHOR */
+    
+    margin: 10px 0; /* controla o espaço certo */
+    line-height: 1;
+
+    color: #FFE600; /* MESMA COR do "LUCRAR TODOS OS DIAS" */
+
+    text-shadow:
+        0px 2px 5px rgba(0,0,0,0.6),
+        0px 0px 10px rgba(255,215,0,0.6);
+}
+
+/* BRILHO NO TOPO */
+
+
+/* LINHA LUMINOSA */
+.linha {
+    width: 500px;
+    height: 3px;
+    margin: 10px auto 20px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        #FFD700,
+        #FFD700,
+        transparent
+    );
+
+    box-shadow: 0px 0px 15px #FFD700;
+}
+
+/* SUBTÍTULO */
+.subtitulo {
+    font-size: 25px;
+    color: #ddd;
+    letter-spacing: 2px;
+}
+
+/* PARTE DESTACADA */
+.subtitulo span {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+/* CONTEÚDO */
+.conteudo {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+/* CARD (VIDRO ESCURO IGUAL IMAGEM) */
+.card {
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(12px);
+
+    padding: 25px;
+    width: 280px;
+
+    border-radius: 12px;
+    border: 1px solid rgba(255,215,0,0.3);
+
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.8);
+}
+
+/* LISTA */
+/* estrutura */
+.item {
+    
+    line-height: 1;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 14px 0;
+
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: aparecer 0.6s ease forwards;
+}
+
+.item:nth-child(1) { animation-delay: 0.2s; }
+.item:nth-child(2) { animation-delay: 0.4s; }
+.item:nth-child(3) { animation-delay: 0.6s; }
+.item:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* círculo dourado */
+.icon {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 2px solid #FFD700;
+    color: #FFD700;
+    box-shadow: 0 0 8px rgba(255,215,0,0.6);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* texto branco */
+.item p {
+    line-height: 3;
+    color: #ffffff;
+    margin: 0;
+    font-size: 36px;
+    color: #ffffff !important;
+}
+
+
+/* 🔥 efeito ao passar o mouse */
+.item:hover {
+    transform: translateX(8px) scale(1.02); /* move levemente */
+}
+
+/* destaque no texto */
+.item:hover p {
+    color: #FFD700;
+}
+
+/* destaque no círculo */
+.item:hover .icon {
+    background: #FFD700;
+    color: black;
+}
+
+/* BOTÃO (IGUAL DA IMAGEM, COM GLOW) */
+.botao {
+    text-align: center;
+    margin: 60px;
+}
+
+.botao a {
+
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+
+    text-decoration: none;
+    color: black;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0px 0px 20px rgba(255,215,0,0.7),
+        0px 10px 30px rgba(0,0,0,0.7);
+
+    transition: 0.3s;
+
+    position: relative;
+    display: inline-block;
+
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    color: black;
+
+    font-size: 33px;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    padding: 10px 45px;
+    border-radius: 12px;
+    text-decoration: none;
+
+    /* brilho base */
+    box-shadow:
+        0 0 15px rgba(255,215,0,0.7),
+        0 10px 30px rgba(0,0,0,0.7);
+
+    /* animações */
+    animation: flutuar 3s ease-in-out infinite,
+               pulsar 2s infinite;
+
+    overflow: hidden;
+    transition: 0.3s;
+}
+.botao a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+    );
+
+    animation: brilhoPassando 5s infinite;
+}
+
+@keyframes flutuar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes pulsar {
+    0% {
+        box-shadow: 0 0 15px rgba(255,215,0,0.7);
+    }
+    50% {
+        box-shadow: 0 0 35px rgba(255,215,0,1);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(255,215,0,0.7);
+    }
+}
+
+@keyframes brilhoPassando {
+    0% {
+        left: -100%;
+    }
+    20% {
+        left: 120%;
+    }
+    100% {
+        left: 120%;
+    }
+}
+
+
+
+
+/* HOVER FORTE */
+.botao a:hover {
+    transform: scale(1.1);
+    box-shadow:
+        0px 0px 40px rgba(255,215,0,1),
+        0px 15px 40px rgba(0,0,0,0.9);
+}
+.simulacao h3 {
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+/* CARD PRODUTO */
+.produto {
+    text-align: center;
+    position: relative;
+}
+
+/* imagem flutuando */
+.produto img {
+    width: 220px;
+    margin-bottom: 15px;
+
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+/* animação */
+@keyframes flutuar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
+/* preço antigo */
+.preco-antigo {
+    line-height: 1;
+
+
+    color: #aaa;
+    text-decoration: line-through;
+    margin: 0;
+    font-size: 35px;
+}
+
+/* preço destaque */
+.preco {
+    color: #FFD700;
+    font-size: 65px;
+    font-weight: bold;
+    margin: 5px 0;
+
+    text-shadow: 0 0 10px rgba(255,215,0,0.7);
+}
+.topo {
+    
+    @media (max-width: 768px) {
+
+        .topo {
+            padding-top: 160px !important;
+        }
+    
+    }}
+   
