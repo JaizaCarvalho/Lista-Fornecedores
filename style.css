@@ -6,7 +6,9 @@ body {
     font-family: 'Poppins', sans-serif;
     color: white;
 
-    background: url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d");
+    background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url("imagemfundo.PNG");
 
     background-size: cover;
     background-position: center;
